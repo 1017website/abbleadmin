@@ -37,15 +37,15 @@
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/dashboard" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">{{ __('Dashboard') }}</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-alert-circle"></i><span class="hide-menu">{{ __('About') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Description') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Our Values') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Description') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Our Values') }}</span></a></li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">{{ __('People') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Our Directors') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Consultans') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Our Directors') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Consultans') }}</span></a></li>
                     </ul>
                 </li>
 
@@ -55,24 +55,24 @@
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-switch"></i><span class="hide-menu">{{ __('Community') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Charity & Industry Partnership') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Volunteering') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Diversity & Conclusion') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Charity & Industry Partnership') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Volunteering') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Diversity & Conclusion') }}</span></a></li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-plus"></i><span class="hide-menu">{{ __('Jobs') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Jobs') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Join Abblesearch') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Jobs') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Join Abblesearch') }}</span></a></li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">{{ __('Knowledge') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('News') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Thought Leadership') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Salary Surveys') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('News') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Thought Leadership') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Salary Surveys') }}</span></a></li>
                     </ul>
                 </li>
 
