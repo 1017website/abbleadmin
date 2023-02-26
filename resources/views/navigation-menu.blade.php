@@ -35,75 +35,48 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav" class="p-t-30">
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/dashboard" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">{{ __('Dashboard') }}</span></a></li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-store"></i><span class="hide-menu">{{ __('Store') }}</span></a>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-alert-circle"></i><span class="hide-menu">{{ __('About') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="/store-type-product" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">{{ __('Type Items') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/store-product" class="sidebar-link"><i class="mdi mdi-barcode"></i><span class="hide-menu">{{ __('Product') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/store-stock" class="sidebar-link"><i class="mdi mdi-scale-balance"></i><span class="hide-menu">{{ __('Stock') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/store-chasier" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">{{ __('Cashier') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/store-customer" class="sidebar-link"><i class="mdi mdi-account-multiple-plus"></i><span class="hide-menu">{{ __('Customer') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/store-spending" class="sidebar-link"><i class="mdi mdi-cash"></i><span class="hide-menu">{{ __('Spending') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/store-investment" class="sidebar-link"><i class="mdi mdi-timer-sand"></i><span class="hide-menu">{{ __('Investment') }}</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-clipboard-text"></i><span class="hide-menu">{{ __('Report') }}</span></a>
-                            <ul aria-expanded="false" class="collapse  second-level">
-                                <li class="sidebar-item"><a href="/report-store/current-stock" class="sidebar-link"><i class="mdi mdi-clipboard-check"></i><span class="hide-menu">{{ __('Report Current Stock') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/report-store/history-stock" class="sidebar-link"><i class="mdi mdi-clipboard-flow"></i><span class="hide-menu">{{ __('Report History Stock') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/report-store/revenue" class="sidebar-link"><i class="mdi mdi-currency-usd"></i><span class="hide-menu">{{ __('Report Revenue') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/report-store/expense" class="sidebar-link"><i class="mdi mdi-currency-usd-off"></i><span class="hide-menu">{{ __('Report Expense') }}</span></a></li>
-                            </ul>
-                        </li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Description') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Our Values') }}</span></a></li>
                     </ul>
                 </li>
 
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-car"></i><span class="hide-menu">{{ __('Workshop') }}</span></a>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">{{ __('People') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-format-list-bulleted"></i><span class="hide-menu">{{ __('Master') }}</span></a>
-                            <ul aria-expanded="false" class="collapse  second-level">
-                                <li class="sidebar-item"><a href="/type-product" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">{{ __('Type Items') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/product" class="sidebar-link"><i class="mdi mdi-barcode"></i><span class="hide-menu">{{ __('Items') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/type-service" class="sidebar-link"><i class="mdi mdi-format-list-bulleted"></i><span class="hide-menu">{{ __('Type Service') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/service" class="sidebar-link"><i class="mdi mdi-wrench"></i><span class="hide-menu">{{ __('Service') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/customer" class="sidebar-link"><i class="mdi mdi-account-multiple-plus"></i><span class="hide-menu">{{ __('Customer') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/car" class="sidebar-link"><i class="mdi mdi-car"></i><span class="hide-menu">{{ __('Cars') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/car-brand" class="sidebar-link"><i class="mdi mdi-car-wash"></i><span class="hide-menu">{{ __('Car Brands') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/car-type" class="sidebar-link"><i class="mdi mdi-car-connected"></i><span class="hide-menu">{{ __('Car Types') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/color" class="sidebar-link"><i class="mdi mdi-format-color-fill"></i><span class="hide-menu">{{ __('Color') }}</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-dropbox"></i><span class="hide-menu">{{ __('Inventory') }}</span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="/stock" class="sidebar-link"><i class="mdi mdi-scale-balance"></i><span class="hide-menu">{{ __('Stock') }}</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/order" aria-expanded="false"><i class="mdi mdi-cart"></i><span class="hide-menu">{{ __('Order') }}</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/invoice" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">{{ __('Invoice') }}</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/workorder" aria-expanded="false"><i class="mdi mdi-worker"></i><span class="hide-menu">{{ __('Work Order') }}</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-currency-usd"></i><span class="hide-menu">{{ __('Expense') }}</span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="/expense-spending" class="sidebar-link"><i class="mdi mdi-cash"></i><span class="hide-menu">{{ __('Spending') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/expense-investment" class="sidebar-link"><i class="mdi mdi-timer-sand"></i><span class="hide-menu">{{ __('Investment') }}</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-clipboard-text"></i><span class="hide-menu">{{ __('Report') }}</span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="/report/current-stock" class="sidebar-link"><i class="mdi mdi-clipboard-check"></i><span class="hide-menu">{{ __('Report Current Stock') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/report/history-stock" class="sidebar-link"><i class="mdi mdi-clipboard-flow"></i><span class="hide-menu">{{ __('Report History Stock') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/report/revenue" class="sidebar-link"><i class="mdi mdi-currency-usd"></i><span class="hide-menu">{{ __('Report Revenue') }}</span></a></li>
-                                <li class="sidebar-item"><a href="/report/expense" class="sidebar-link"><i class="mdi mdi-currency-usd-off"></i><span class="hide-menu">{{ __('Report Expense') }}</span></a></li>
-                            </ul>
-                        </li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Our Directors') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Consultans') }}</span></a></li>
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-settings-variant"></i><span class="hide-menu">{{ __('HRM') }}</span></a>
+
+                <li class="sidebar-item"><a class="sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">{{ __('Specializations') }}</span></a></li>
+
+                <li class="sidebar-item"><a class="sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-wrench"></i><span class="hide-menu">{{ __('Service') }}</span></a></li>
+
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-switch"></i><span class="hide-menu">{{ __('Community') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="/mechanic" class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu">{{ __('Employee') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/attendance" class="sidebar-link"><i class="mdi mdi-account-check"></i><span class="hide-menu">{{ __('Attendance') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/attendance-permit" class="sidebar-link"><i class="mdi mdi-account-remove"></i><span class="hide-menu">{{ __('Attendance Permit') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/payroll" class="sidebar-link"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">{{ __('Payroll') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/employee-credit" class="sidebar-link"><i class="mdi mdi-account-minus"></i><span class="hide-menu">{{ __('Credit') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Charity & Industry Partnership') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Volunteering') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Diversity & Conclusion') }}</span></a></li>
                     </ul>
                 </li>
-                <li class="sidebar-item"><a class="sidebar-link" href="/setting" aria-expanded="false"><i class="mdi mdi-wrench"></i><span class="hide-menu">{{ __('Setting') }}</span></a></li>
+
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-plus"></i><span class="hide-menu">{{ __('Jobs') }}</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Jobs') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Join Abblesearch') }}</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">{{ __('Knowledge') }}</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('News') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Thought Leadership') }}</span></a></li>
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class=""></i><span class="hide-menu">{{ __('Salary Surveys') }}</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item"><a class="sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-contacts"></i><span class="hide-menu">{{ __('Contact') }}</span></a></li>
             </ul>
         </nav>
     </div>

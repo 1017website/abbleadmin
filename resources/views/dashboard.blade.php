@@ -19,12 +19,12 @@
 
         <div class="card bg-white shadow default-border-radius">
             <div class="card-body">
-                <h5 class="card-title">{{ __('Dashboard Store') }}</h5>
+                <h5 class="card-title">{{ __('Dashboard') }}</h5>
                 <div class="border-top"></div>
-				
-				<div class="row">
-				
-				</div>
+
+                <div class="row">
+
+                </div>
 
             </div>
         </div>

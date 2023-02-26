@@ -14,7 +14,7 @@ return [
       |
      */
 
-    'name' => 'Prima Automotive',
+    'name' => 'Abble Admin',
     /*
       |--------------------------------------------------------------------------
       | Application Environment
