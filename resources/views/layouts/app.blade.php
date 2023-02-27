@@ -46,6 +46,7 @@
         <script src="{{asset('js/toastr.min.js')}}"></script>
         <script src="{{asset('js/dropzone.js')}}"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+        <script src="https://cdn.tiny.cloud/1/pz53e54kqtqrbydp4gnfsmbuk7pdynzp9t8bbvj2we7zg1i7/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
         @livewireScripts       
     </head>
     <body>
@@ -99,6 +100,18 @@ $(document).ready(function () {
     $(".phone").inputFilter(function (value) {
         return /^\d*$/.test(value);    // Allow digits only, using a RegExp
     });
+});
+
+tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+    mergetags_list: [
+        {value: 'First.Name', title: 'First Name'},
+        {value: 'Email', title: 'Email'},
+    ]
 });
         </script>
     </body>

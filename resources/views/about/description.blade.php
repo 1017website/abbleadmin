@@ -37,7 +37,7 @@
 
                     <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                         <label for="description" class="col-sm-2 control-label">Description</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-12">
                             <textarea class="textarea" id="editor" placeholder="" name="description" style="outline: none;width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                                 {{old('description', (($data) ? $data->description : ''))}}
                             </textarea>
