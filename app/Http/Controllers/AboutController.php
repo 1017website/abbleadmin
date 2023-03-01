@@ -40,4 +40,35 @@ class AboutController extends Controller {
         }
     }
 
+    public function valueIndex() {
+        $model = DB::table('about_values')->get();
+        return view('about.value', ['model' => $model]);
+    }
+
+    public function valueForm($id = NULL) {
+        $statusTitle = 'Create';
+        $model = [];
+        if (strlen($id) > 0) {
+            $model = DB::table('about_values')->where('id', $id)->first();
+            if (count($model) > 0) {
+                $statusTitle = 'Edit';
+            } else {
+                return redirect('/about-value')->with('error', 'Data not found !');
+            }
+        }
+
+        return view('about.value_form', [
+            'model' => $model,
+            'status_title' => $statusTitle
+        ]);
+    }
+
+    public function valueSave(Request $request) {
+        
+    }
+    
+    public function valueDetail($id){
+        
+    }
+
 }
