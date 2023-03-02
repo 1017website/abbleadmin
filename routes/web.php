@@ -13,15 +13,15 @@ Route::get('generate', function () {
 });
 
 //about
-Route::get('/about-description', [AboutController::class, 'description'])->middleware(['auth']);
-Route::post('/about-description/save', [AboutController::class, 'descriptionSave'])->middleware(['auth']);
+Route::get('/about-description', [AboutController::class, 'description'])->middleware(['auth'])->name('about-description');
+Route::post('/about-description/save', [AboutController::class, 'descriptionSave'])->middleware(['auth'])->name('about-description.save');
 
-Route::get('/about-value', [AboutController::class, 'valueIndex'])->middleware(['auth']);
-Route::get('/about-value/add', [AboutController::class, 'valueForm'])->middleware(['auth']);
-Route::get('/about-value/edit/{id}', [AboutController::class, 'valueForm'])->middleware(['auth']);
-Route::post('/about-value/save', [AboutController::class, 'valueSave'])->middleware(['auth']);
-Route::post('/about-value/delete', [AboutController::class, 'valueDelete'])->middleware(['auth']);
-Route::get('/about-value/detail/{id}', [AboutController::class, 'valueDetail'])->middleware(['auth']);
+Route::get('/about-value', [AboutController::class, 'valueIndex'])->middleware(['auth'])->name('about-values');
+Route::get('/about-value/add', [AboutController::class, 'valueForm'])->middleware(['auth'])->name('about-values.create');
+Route::get('/about-value/edit/{id}', [AboutController::class, 'valueForm'])->middleware(['auth'])->name('about-values.edit');
+Route::post('/about-value/save', [AboutController::class, 'valueSave'])->middleware(['auth'])->name('about-values.save');
+Route::delete('/about-value/delete/{id}', [AboutController::class, 'valueDelete'])->middleware(['auth'])->name('about-values.delete');
+Route::get('/about-value/detail/{id}', [AboutController::class, 'valueDetail'])->middleware(['auth'])->name('about-values.show');
 //about
 
 

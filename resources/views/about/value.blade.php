@@ -18,7 +18,7 @@
     <div class="container-fluid">
 
         <div class="div-top">
-            <a class="btn btn-default" href="/about-value/add">{{ __('Create') }}</a>
+            <a class="btn btn-default" href="{{ route('about-values.create') }}">{{ __('Create') }}</a>
         </div>
 
         <div class="card bg-white shadow default-border-radius">
@@ -49,17 +49,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{ $no = 0; }}
+                            <?php $no = 1; ?>
                             @foreach ($model as $row)
                             <tr>
-                                <td>{{ $no++; }}</td>
+                                <td align="center">{{ $no++; }}</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{!! $row->description !!}</td>
+                                <td>{{ isset($row->userCreated) ? $row->userCreated->name : '-' }}</td>
+                                <td>{{ isset($row->userUpdated) ? $row->userUpdated->name : '-' }}</td>
+                                <td>{{ $row->created_at }}</td>
+                                <td>{{ $row->updated_at }}</td>
+                                <td class="action-button">
+                                    <form action="{{ route('about-values.delete',$row->id) }}" method="POST">
+                                        <a class="btn btn-info" href="{{ route('about-values.show',$row->id) }}"><i class="fas fa-eye"></i></a>
+                                        <a class="btn btn-default" href="{{ route('about-values.edit',$row->id) }}"><i class="fas fa-pencil-alt"></i></a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

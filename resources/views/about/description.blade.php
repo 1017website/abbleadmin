@@ -30,7 +30,7 @@
                 </div>
                 @endif
 
-                <form class="form-horizontal" method="POST" action="/about-description/save" enctype="multipart/form-data">
+                <form class="form-horizontal" method="POST" action="{{ route('about-description.save') }}" enctype="multipart/form-data">
                     {{ csrf_field() }} 
 
                     <input type="hidden" name="about_id" value="{{ (($data) ? $data->id : '') }}">

@@ -19,7 +19,7 @@
     <div class="container-fluid">
 
         <div class="div-top">
-            <a class="btn btn-default" href="/about-value">{{ __('Back') }}</a>
+            <a class="btn btn-default" href="{{ route('about-values') }}">{{ __('Back') }}</a>
         </div>
 
         <div class="card bg-white shadow default-border-radius">
@@ -38,20 +38,21 @@
                 </div>
                 @endif
 
-                <form class="form-horizontal" action="/about-value/save" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{ route('about-values.save') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group row">
-                        <label for="name" class="col-sm-2 text-left control-label col-form-label">{{ __('Image') }}</label>
+                        <label for="image" class="col-sm-2 text-left control-label col-form-label">{{ __('Image') }}</label>
                         <div class="col-sm-10">
                             @if(!empty($model->image))
-                            <img src="{{ asset('storage/'.$model->image) }}" class="mb-2 img-fluid img-view">
+                            <img src="{{ asset('storage/'.$model->image) }}" class="mb-2 img-fluid img-view col-sm-5">
                             @endif
+                            <img class="mb-2 img-fluid img-preview" style="max-width: 300px;">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="image" name="image">
+                                <input type="file" class="custom-file-input" id="image" name="image" onChange="previewImage()">
                                 <label class="custom-file-label" for="validatedCustomFile">{{ __('Choose file...') }}</label>
                                 @error('image')
-                                <div class="invalid-feedback">{{ $message }}k</div>
+                                <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -60,7 +61,7 @@
                     <div class="form-group row">
                         <label for="description" class="col-sm-2 text-left control-label col-form-label">{{ __('Description') }}</label>
                         <div class="col-sm-10">
-                            <textarea id="description" name="description"></textarea>
+                            <textarea id="description" name="description">{{old('description', (isset($model->description) ? $model->description : ''))}}</textarea>
                         </div>
                     </div>
 
@@ -78,5 +79,17 @@
             var nextSibling = e.target.nextElementSibling
             nextSibling.innerText = fileName
         })
+
+        function previewImage() {
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.img-preview');
+            imgPreview.style.display = 'block';
+            const ofReader = new FileReader();
+            ofReader.readAsDataURL(image.files[0]);
+            ofReader.onload = function (oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+
     </script>
 </x-app-layout>
