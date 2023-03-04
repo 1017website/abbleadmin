@@ -97,9 +97,9 @@ $('.mydatepicker').datepicker({
     };
 }(jQuery));
 $(document).ready(function () {
-    $(".phone").inputFilter(function (value) {
-        return /^\d*$/.test(value);    // Allow digits only, using a RegExp
-    });
+//    $(".phone").inputFilter(function (value) {
+//        return /^\d*$/.test(value);    // Allow digits only, using a RegExp
+//    });
 });
 
 tinymce.init({

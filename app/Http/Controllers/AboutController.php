@@ -7,6 +7,7 @@ use App\Models\AboutValues;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use File;
 
 class AboutController extends Controller {
 
@@ -65,6 +66,10 @@ class AboutController extends Controller {
     }
 
     public function valueSave(Request $request) {
+        $request->validate([
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+
         $success = true;
         $id = isset($request['id']) ? $request['id'] : NULL;
         if (strlen($id) > 0) {
@@ -78,12 +83,23 @@ class AboutController extends Controller {
                 $model = AboutValues::firstOrNew(['id' => $id]);
                 $model->description = isset($request['description']) ? $request['description'] : NULL;
                 if ($request->file('image') && request('image') != '') {
+                    if (!file_exists('images')) {
+                        mkdir('images', 0777, true);
+                    }
+                    if (!file_exists('images/about-values/')) {
+                        mkdir('images/about-values/', 0777, true);
+                    }
                     if (!empty($model->image)) {
-                        if (Storage::exists($model->image)) {
-                            Storage::delete($model->image);
+                        $imagePath = $_SERVER['DOCUMENT_ROOT'] . $model->image;
+                        if (file_exists($imagePath)) {
+                            File::delete($imagePath);
                         }
                     }
-                    $model->image = $request->file('image')->storeAs('about-values', date('YmdHis') . '.' . $request->file('image')->getClientOriginalExtension());
+                    $nameImg = time() . '.' . $request->file('image')->getClientOriginalExtension();
+                    $destinationPath = $_SERVER['DOCUMENT_ROOT'] . '/images/about-values/';
+                    $imagePath = $destinationPath . $nameImg;
+                    $request->file('image')->move($destinationPath, $nameImg);
+                    $model->image = '/images/about-values/' . $nameImg;
                 }
                 $model->save();
             } catch (Exception $ex) {
@@ -101,14 +117,15 @@ class AboutController extends Controller {
 
     public function valueDetail($id) {
         $model = AboutValues::where('id', $id)->first();
-        return view('about.value_show', compact('model'));
+        return view('about.value_detail', compact('model'));
     }
 
     public function valueDelete($id) {
         $aboutValues = AboutValues::where('id', $id)->first();
         if (strlen($aboutValues->image) > 0) {
-            if (Storage::exists($aboutValues->image)) {
-                Storage::delete($aboutValues->image);
+            $imagePath = $_SERVER['DOCUMENT_ROOT'] . $aboutValues->image;
+            if (file_exists($imagePath)) {
+                File::delete($imagePath);
             }
         }
         $aboutValues->delete();

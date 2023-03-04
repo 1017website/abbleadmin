@@ -6,8 +6,7 @@
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">{{ __('About') }}</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('about-values') }}">{{ __('Our Values') }}</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('people') }}">{{ __('People') }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ __('Detail') }}</li>
                         </ol>
                     </nav>
@@ -19,7 +18,7 @@
     <div class="container-fluid">
 
         <div class="div-top">
-            <a class="btn btn-default" href="{{ route('about-values') }}">{{ __('Back') }}</a>
+            <a class="btn btn-default" href="{{ route('people') }}">{{ __('Back') }}</a>
         </div>
 
         <div class="card bg-white shadow default-border-radius">
@@ -35,6 +34,56 @@
                         @if(!empty($model->image))
                         <img src="{{ asset($model->image) }}" class="img-fluid img-view">
                         @endif
+                    </div>
+                </div>
+
+                <div class="border-top"></div>
+                <div class="row p-3">
+                    <div class="col-sm-2">
+                        <strong>{{ __('Type') }}</strong>
+                    </div>
+                    <div class="col-sm-10">
+                        {{ ucfirst($model->type) }}
+                    </div>
+                </div>
+
+                <div class="border-top"></div>
+                <div class="row p-3">
+                    <div class="col-sm-2">
+                        <strong>{{ __('Role') }}</strong>
+                    </div>
+                    <div class="col-sm-10">
+                        {{ $model->role }}
+                    </div>
+                </div>
+
+                <div class="border-top"></div>
+                <div class="row p-3">
+                    <div class="col-sm-2">
+                        <strong>{{ __('Name') }}</strong>
+                    </div>
+                    <div class="col-sm-10">
+                        {{ $model->name }}
+                    </div>
+                </div>
+
+                <div class="border-top"></div>
+                <div class="row p-3">
+                    <div class="col-sm-2">
+                        <strong>{{ __('Email') }}</strong>
+                    </div>
+                    <div class="col-sm-10">
+                        {{ $model->email }}
+                    </div>
+                </div>
+
+                <div class="border-top"></div>
+                <div class="row p-3">
+                    <div class="col-sm-2">
+                        <strong>{{ __('Phone') }}</strong>
+                    </div>
+                    <div class="col-sm-10">
+                        {{ $model->phone }}
                     </div>
                 </div>
 

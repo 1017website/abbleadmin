@@ -6,8 +6,7 @@
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">{{ __('About') }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ __('Our Values') }}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('People') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -18,7 +17,7 @@
     <div class="container-fluid">
 
         <div class="div-top">
-            <a class="btn btn-default" href="{{ route('about-values.create') }}">{{ __('Create') }}</a>
+            <a class="btn btn-default" href="{{ route('people.create') }}">{{ __('Create') }}</a>
         </div>
 
         <div class="card bg-white shadow default-border-radius">
@@ -40,11 +39,13 @@
                             <tr>
                                 <th>{{ __('No') }}</th>
                                 <th>{{ __('Image') }}</th>
-                                <th>{{ __('Description') }}</th>
+                                <th>{{ __('Type') }}</th>
+                                <th>{{ __('Role') }}</th>
+                                <th>{{ __('Name') }}</th>
+                                <th>{{ __('Email') }}</th>
+                                <th>{{ __('Phone') }}</th>
                                 <th>{{ __('Created By') }}</th>
-                                <th>{{ __('Updated By') }}</th>
                                 <th>{{ __('Created At') }}</th>
-                                <th>{{ __('Updated At') }}</th>
                                 <th>{{ __('Action') }}</th>
                             </tr>
                         </thead>
@@ -54,15 +55,17 @@
                             <tr>
                                 <td align="center">{{ $no++; }}</td>
                                 <td><a style="color:#2962FF;white-space: nowrap;" href="{{ asset($row->image) }}" target="_blank"><i class="fas fa-search"></i> Show Image</a></td>
-                                <td>{!! $row->description !!}</td>
+                                <td>{{ ucfirst($row->type) }}</td>
+                                <td>{{ $row->role }}</td>
+                                <td>{{ $row->name }}</td>
+                                <td>{{ $row->email }}</td>
+                                <td>{{ $row->phone }}</td>
                                 <td>{{ isset($row->userCreated) ? $row->userCreated->name : '-' }}</td>
-                                <td>{{ isset($row->userUpdated) ? $row->userUpdated->name : '-' }}</td>
                                 <td>{{ $row->created_at }}</td>
-                                <td>{{ $row->updated_at }}</td>
                                 <td class="action-button">
-                                    <form action="{{ route('about-values.delete',$row->id) }}" method="POST">
-                                        <a class="btn btn-info" href="{{ route('about-values.detail',$row->id) }}"><i class="fas fa-eye"></i></a>
-                                        <a class="btn btn-default" href="{{ route('about-values.edit',$row->id) }}"><i class="fas fa-pencil-alt"></i></a>
+                                    <form action="{{ route('people.delete',$row->id) }}" method="POST">
+                                        <a class="btn btn-info" href="{{ route('people.detail',$row->id) }}"><i class="fas fa-eye"></i></a>
+                                        <a class="btn btn-default" href="{{ route('people.edit',$row->id) }}"><i class="fas fa-pencil-alt"></i></a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>

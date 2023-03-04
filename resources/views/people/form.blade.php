@@ -6,8 +6,7 @@
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">{{ __('About') }}</a></li>
-                            <li class="breadcrumb-item"><a href="/about-value">{{ __('List') }}</a></li>
+                            <li class="breadcrumb-item"><a href="/people">{{ __('People') }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ __($status_title) }}</li>
                         </ol>
                     </nav>
@@ -19,7 +18,7 @@
     <div class="container-fluid">
 
         <div class="div-top">
-            <a class="btn btn-default" href="{{ route('about-values') }}">{{ __('Back') }}</a>
+            <a class="btn btn-default" href="{{ route('people') }}">{{ __('Back') }}</a>
         </div>
 
         <div class="card bg-white shadow default-border-radius">
@@ -38,7 +37,7 @@
                 </div>
                 @endif
 
-                <form class="form-horizontal" action="{{ route('about-values.save') }}" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{ route('people.save') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <input type="text" class="hidden" id="id" name="id" value="{{(isset($model->id) ? $model->id : '')}}">
@@ -57,6 +56,44 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="type" class="col-sm-2 text-left control-label col-form-label">{{ __('Type') }}</label>
+                        <div class="col-sm-10">
+                            <select class="select2 form-control custom-select" id="type" name="type" style="width: 100%;">
+                                <option value="directors">Directors</option>
+                                <option value="consultans">Consultans</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="role" class="col-sm-2 text-left control-label col-form-label">{{ __('Role') }}</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" placeholder="Role" type="text" id="role" name="role" value="{{old('role', (isset($model->role) ? $model->role : ''))}}"  required="true">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 text-left control-label col-form-label">{{ __('Name') }}</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" placeholder="Name" type="text" id="name" name="name" value="{{old('name', (isset($model->name) ? $model->name : ''))}}"  required="true">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 text-left control-label col-form-label">{{ __('Email') }}</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" placeholder="Email" type="email" id="email" name="email" value="{{old('email', (isset($model->email) ? $model->email : ''))}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="phone" class="col-sm-2 text-left control-label col-form-label">{{ __('Phone') }}</label>
+                        <div class="col-sm-10">
+                            <input class="form-control phone" placeholder="Phone" type="text" id="phone" name="phone" value="{{old('phone', (isset($model->phone) ? $model->phone : ''))}}">
                         </div>
                     </div>
 
