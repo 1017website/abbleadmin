@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\SpecializationsController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\File;
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
@@ -46,5 +47,19 @@ Route::post('/specializations/save', [SpecializationsController::class, 'save'])
 Route::delete('/specializations/delete/{id}', [SpecializationsController::class, 'delete'])->middleware(['auth'])->name('specializations.delete');
 Route::get('/specializations/detail/{id}', [SpecializationsController::class, 'detail'])->middleware(['auth'])->name('specializations.detail');
 //specializations
+
+//service
+Route::get('/service-description', [ServiceController::class, 'description'])->middleware(['auth'])->name('service-description');
+Route::post('/service-description/save', [ServiceController::class, 'descriptionSave'])->middleware(['auth'])->name('service-description.save');
+
+Route::get('/service', [ServiceController::class, 'index'])->middleware(['auth'])->name('service');
+Route::get('/service/add', [ServiceController::class, 'form'])->middleware(['auth'])->name('service.create');
+Route::get('/service/edit/{id}', [ServiceController::class, 'form'])->middleware(['auth'])->name('service.edit');
+Route::post('/service/save', [ServiceController::class, 'save'])->middleware(['auth'])->name('service.save');
+Route::delete('/service/delete/{id}', [ServiceController::class, 'delete'])->middleware(['auth'])->name('service.delete');
+Route::get('/service/detail/{id}', [ServiceController::class, 'detail'])->middleware(['auth'])->name('service.detail');
+//service
+
+
 
 

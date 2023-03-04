@@ -41,12 +41,17 @@
                         <li class="sidebar-item"><a href="/about-value" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Our Values') }}</span></a></li>
                     </ul>
                 </li>
-                
+
                 <li class="sidebar-item"><a class="sidebar-link" href="/people" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">{{ __('People') }}</span></a></li>
 
                 <li class="sidebar-item"><a class="sidebar-link" href="/specializations" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">{{ __('Specializations') }}</span></a></li>
 
-                <li class="sidebar-item"><a class="sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-wrench"></i><span class="hide-menu">{{ __('Service') }}</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-wrench"></i><span class="hide-menu">{{ __('Services') }}</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="/service-description" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Description') }}</span></a></li>
+                        <li class="sidebar-item"><a href="/service" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Services') }}</span></a></li>
+                    </ul>
+                </li>
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-switch"></i><span class="hide-menu">{{ __('Community') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
