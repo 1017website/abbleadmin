@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\SpecializationsController;
 use Illuminate\Support\Facades\File;
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
@@ -36,5 +37,14 @@ Route::post('/people/save', [PeopleController::class, 'save'])->middleware(['aut
 Route::delete('/people/delete/{id}', [PeopleController::class, 'delete'])->middleware(['auth'])->name('people.delete');
 Route::get('/people/detail/{id}', [PeopleController::class, 'detail'])->middleware(['auth'])->name('people.detail');
 //people
+
+//specializations
+Route::get('/specializations', [SpecializationsController::class, 'index'])->middleware(['auth'])->name('specializations');
+Route::get('/specializations/add', [SpecializationsController::class, 'form'])->middleware(['auth'])->name('specializations.create');
+Route::get('/specializations/edit/{id}', [SpecializationsController::class, 'form'])->middleware(['auth'])->name('specializations.edit');
+Route::post('/specializations/save', [SpecializationsController::class, 'save'])->middleware(['auth'])->name('specializations.save');
+Route::delete('/specializations/delete/{id}', [SpecializationsController::class, 'delete'])->middleware(['auth'])->name('specializations.delete');
+Route::get('/specializations/detail/{id}', [SpecializationsController::class, 'detail'])->middleware(['auth'])->name('specializations.detail');
+//specializations
 
 

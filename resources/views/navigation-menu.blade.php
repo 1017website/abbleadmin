@@ -44,7 +44,7 @@
                 
                 <li class="sidebar-item"><a class="sidebar-link" href="/people" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">{{ __('People') }}</span></a></li>
 
-                <li class="sidebar-item"><a class="sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">{{ __('Specializations') }}</span></a></li>
+                <li class="sidebar-item"><a class="sidebar-link" href="/specializations" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">{{ __('Specializations') }}</span></a></li>
 
                 <li class="sidebar-item"><a class="sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-wrench"></i><span class="hide-menu">{{ __('Service') }}</span></a></li>
 
