@@ -6,6 +6,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\SpecializationsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\CommunityController;
 use Illuminate\Support\Facades\File;
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
@@ -60,6 +61,28 @@ Route::delete('/service/delete/{id}', [ServiceController::class, 'delete'])->mid
 Route::get('/service/detail/{id}', [ServiceController::class, 'detail'])->middleware(['auth'])->name('service.detail');
 //service
 
+//community charity
+Route::get('/community-charity', [CommunityController::class, 'charityIndex'])->middleware(['auth'])->name('charity');
+Route::get('/community-charity/add', [CommunityController::class, 'charityForm'])->middleware(['auth'])->name('charity.create');
+Route::get('/community-charity/edit/{id}', [CommunityController::class, 'charityForm'])->middleware(['auth'])->name('charity.edit');
+Route::post('/community-charity/save', [CommunityController::class, 'charitySave'])->middleware(['auth'])->name('charity.save');
+Route::delete('/community-charity/delete/{id}', [CommunityController::class, 'charityDelete'])->middleware(['auth'])->name('charity.delete');
+Route::get('/community-charity/detail/{id}', [CommunityController::class, 'charityDetail'])->middleware(['auth'])->name('charity.detail');
+//community charity
+
+//community volunteering
+Route::get('/community-volunteering', [CommunityController::class, 'volunteeringIndex'])->middleware(['auth'])->name('volunteering');
+Route::get('/community-volunteering/add', [CommunityController::class, 'volunteeringForm'])->middleware(['auth'])->name('volunteering.create');
+Route::get('/community-volunteering/edit/{id}', [CommunityController::class, 'volunteeringForm'])->middleware(['auth'])->name('volunteering.edit');
+Route::post('/community-volunteering/save', [CommunityController::class, 'volunteeringSave'])->middleware(['auth'])->name('volunteering.save');
+Route::delete('/community-volunteering/delete/{id}', [CommunityController::class, 'volunteeringDelete'])->middleware(['auth'])->name('volunteering.delete');
+Route::get('/community-volunteering/detail/{id}', [CommunityController::class, 'volunteeringDetail'])->middleware(['auth'])->name('volunteering.detail');
+//community volunteering
+
+//community diversity
+Route::get('/community-diversity', [CommunityController::class, 'communityDiversity'])->middleware(['auth'])->name('diversity.description');
+Route::post('/community-diversity/save', [CommunityController::class, 'communityDiversitySave'])->middleware(['auth'])->name('diversity.description.save');
+//community diversity
 
 
 

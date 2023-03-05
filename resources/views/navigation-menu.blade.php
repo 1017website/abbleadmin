@@ -55,9 +55,9 @@
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-switch"></i><span class="hide-menu">{{ __('Community') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Charity & Industry Partnership') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Volunteering') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Diversity & Conclusion') }}</span></a></li>
+                        <li class="sidebar-item"><a href="/community-charity" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Charity & Industry Partnership') }}</span></a></li>
+                        <li class="sidebar-item"><a href="/community-volunteering" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Volunteering') }}</span></a></li>
+                        <li class="sidebar-item"><a href="/community-diversity" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Diversity & Conclusion') }}</span></a></li>
                     </ul>
                 </li>
 
