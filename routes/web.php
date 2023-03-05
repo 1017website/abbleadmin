@@ -8,6 +8,7 @@ use App\Http\Controllers\SpecializationsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\KnowledgeController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\File;
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
@@ -109,5 +110,12 @@ Route::get('/knowledge-salary', [KnowledgeController::class, 'knowledgeSalary'])
 Route::post('/knowledge-salary/save', [KnowledgeController::class, 'knowledgeSalarySave'])->middleware(['auth'])->name('knowledge.salary.save');
 //knowledge salary
 
-
+//contact
+Route::get('/contact', [ContactController::class, 'index'])->middleware(['auth'])->name('contact');
+Route::get('/contact/add', [ContactController::class, 'form'])->middleware(['auth'])->name('contact.create');
+Route::get('/contact/edit/{id}', [ContactController::class, 'form'])->middleware(['auth'])->name('contact.edit');
+Route::post('/contact/save', [ContactController::class, 'save'])->middleware(['auth'])->name('contact.save');
+Route::delete('/contact/delete/{id}', [ContactController::class, 'delete'])->middleware(['auth'])->name('contact.delete');
+Route::get('/contact/detail/{id}', [ContactController::class, 'detail'])->middleware(['auth'])->name('contact.detail');
+//contact
 
