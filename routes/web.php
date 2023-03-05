@@ -9,6 +9,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\KnowledgeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MasterController;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\File;
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
@@ -119,3 +121,27 @@ Route::delete('/contact/delete/{id}', [ContactController::class, 'delete'])->mid
 Route::get('/contact/detail/{id}', [ContactController::class, 'detail'])->middleware(['auth'])->name('contact.detail');
 //contact
 
+//master
+Route::get('/master-specialization', [MasterController::class, 'specializationIndex'])->middleware(['auth'])->name('master.specialization');
+Route::get('/master-specialization/add', [MasterController::class, 'specializationForm'])->middleware(['auth'])->name('master.specialization.create');
+Route::get('/master-specialization/edit/{id}', [MasterController::class, 'specializationForm'])->middleware(['auth'])->name('master.specialization.edit');
+Route::post('/master-specialization/save', [MasterController::class, 'specializationSave'])->middleware(['auth'])->name('master.specialization.save');
+Route::delete('/master-specialization/delete/{id}', [MasterController::class, 'specializationDelete'])->middleware(['auth'])->name('master.specialization.delete');
+Route::get('/master-specialization/detail/{id}', [MasterController::class, 'specializationDetail'])->middleware(['auth'])->name('master.specialization.detail');
+
+Route::get('/master-hiring', [MasterController::class, 'hiringIndex'])->middleware(['auth'])->name('master.hiring');
+Route::get('/master-hiring/add', [MasterController::class, 'hiringForm'])->middleware(['auth'])->name('master.hiring.create');
+Route::get('/master-hiring/edit/{id}', [MasterController::class, 'hiringForm'])->middleware(['auth'])->name('master.hiring.edit');
+Route::post('/master-hiring/save', [MasterController::class, 'hiringSave'])->middleware(['auth'])->name('master.hiring.save');
+Route::delete('/master-hiring/delete/{id}', [MasterController::class, 'hiringDelete'])->middleware(['auth'])->name('master.hiring.delete');
+Route::get('/master-hiring/detail/{id}', [MasterController::class, 'hiringDetail'])->middleware(['auth'])->name('master.hiring.detail');
+//master
+
+//job
+Route::get('/job', [JobController::class, 'index'])->middleware(['auth'])->name('job');
+Route::get('/job/add', [JobController::class, 'form'])->middleware(['auth'])->name('job.create');
+Route::get('/job/edit/{id}', [JobController::class, 'form'])->middleware(['auth'])->name('job.edit');
+Route::post('/job/save', [JobController::class, 'save'])->middleware(['auth'])->name('job.save');
+Route::delete('/job/delete/{id}', [JobController::class, 'delete'])->middleware(['auth'])->name('job.delete');
+Route::get('/job/detail/{id}', [JobController::class, 'detail'])->middleware(['auth'])->name('job.detail');
+//job
