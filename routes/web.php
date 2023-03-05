@@ -11,6 +11,7 @@ use App\Http\Controllers\KnowledgeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\JoinController;
 use Illuminate\Support\Facades\File;
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
@@ -145,3 +146,16 @@ Route::post('/job/save', [JobController::class, 'save'])->middleware(['auth'])->
 Route::delete('/job/delete/{id}', [JobController::class, 'delete'])->middleware(['auth'])->name('job.delete');
 Route::get('/job/detail/{id}', [JobController::class, 'detail'])->middleware(['auth'])->name('job.detail');
 //job
+
+//join
+Route::get('/join-description', [JoinController::class, 'description'])->middleware(['auth'])->name('join.description');
+Route::post('/join-description/save', [JoinController::class, 'descriptionSave'])->middleware(['auth'])->name('join.description.save');
+
+Route::get('/join', [JoinController::class, 'index'])->middleware(['auth'])->name('join');
+Route::get('/join/add', [JoinController::class, 'form'])->middleware(['auth'])->name('join.create');
+Route::get('/join/edit/{id}', [JoinController::class, 'form'])->middleware(['auth'])->name('join.edit');
+Route::post('/join/save', [JoinController::class, 'save'])->middleware(['auth'])->name('join.save');
+Route::delete('/join/delete/{id}', [JoinController::class, 'delete'])->middleware(['auth'])->name('join.delete');
+Route::get('/join/detail/{id}', [JoinController::class, 'detail'])->middleware(['auth'])->name('join.detail');
+//join
+

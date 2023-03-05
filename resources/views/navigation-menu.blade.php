@@ -71,7 +71,7 @@
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-multiple-plus"></i><span class="hide-menu">{{ __('Join Abblesearch') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="/join-description" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Description') }}</span></a></li>
-                        <li class="sidebar-item"><a href="/join-benefit" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Benefit') }}</span></a></li>
+                        <li class="sidebar-item"><a href="/join" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Benefit') }}</span></a></li>
                     </ul>
                 </li>
 
