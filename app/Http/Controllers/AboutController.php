@@ -23,7 +23,7 @@ class AboutController extends Controller {
     public function descriptionSave(Request $request) {
         $success = true;
         $message = 'Update description success';
-        $aboutId = $request['about_id'] ?: NULL;
+        $aboutId = isset($request['about_id']) ? $request['about_id'] : NULL;
         if ($success) {
             try {
                 $about = AboutDescription::firstOrNew(['id' => $aboutId]);

@@ -6,9 +6,8 @@
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">{{ __('Community') }}</a></li>
-                            <li class="breadcrumb-item"><a href="/community-charity">{{ __('Charity & Industry Partnership') }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ __($status_title) }}</li>
+                            <li class="breadcrumb-item"><a href="#">{{ __('Knowledge') }}</a></li>
+                            <li class="breadcrumb-item"><a href="/knowledge-news">{{ __('News') }}</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -18,13 +17,9 @@
 
     <div class="container-fluid">
 
-        <div class="div-top">
-            <a class="btn btn-default" href="{{ route('charity') }}">{{ __('Back') }}</a>
-        </div>
-
         <div class="card bg-white shadow default-border-radius">
             <div class="card-body">
-                <h5 class="card-title">{{ __('Form') }}</h5>
+                <h5 class="card-title">{{ __('Data') }}</h5>
                 <div class="border-top"></div>
 
                 @if ($errors->any())
@@ -38,7 +33,7 @@
                 </div>
                 @endif
 
-                <form class="form-horizontal" action="{{ route('charity.save') }}" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{ route('news.save') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <input type="text" class="hidden" id="id" name="id" value="{{(isset($model->id) ? $model->id : '')}}">

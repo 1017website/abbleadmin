@@ -7,7 +7,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">{{ __('Community') }}</a></li>
-                            <li class="breadcrumb-item"><a href="/service">{{ __('Volunteering') }}</a></li>
+                            <li class="breadcrumb-item"><a href="/community-volunteering">{{ __('Volunteering') }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ __($status_title) }}</li>
                         </ol>
                     </nav>

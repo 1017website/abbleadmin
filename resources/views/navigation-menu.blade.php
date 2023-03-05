@@ -70,9 +70,9 @@
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">{{ __('Knowledge') }}</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('News') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Thought Leadership') }}</span></a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Salary Surveys') }}</span></a></li>
+                        <li class="sidebar-item"><a href="/knowledge-news" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('News') }}</span></a></li>
+                        <li class="sidebar-item"><a href="/knowledge-thought" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Thought Leadership') }}</span></a></li>
+                        <li class="sidebar-item"><a href="/knowledge-salary" class="sidebar-link"><i class="mdi mdi-checkbox-blank-circle-outline"></i><span class="hide-menu">{{ __('Salary Surveys') }}</span></a></li>
                     </ul>
                 </li>
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\SpecializationsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\KnowledgeController;
 use Illuminate\Support\Facades\File;
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
@@ -83,6 +84,30 @@ Route::get('/community-volunteering/detail/{id}', [CommunityController::class, '
 Route::get('/community-diversity', [CommunityController::class, 'communityDiversity'])->middleware(['auth'])->name('diversity.description');
 Route::post('/community-diversity/save', [CommunityController::class, 'communityDiversitySave'])->middleware(['auth'])->name('diversity.description.save');
 //community diversity
+
+//community charity
+Route::get('/knowledge-news', [KnowledgeController::class, 'newsIndex'])->middleware(['auth'])->name('news');
+Route::get('/knowledge-news/add', [KnowledgeController::class, 'newsForm'])->middleware(['auth'])->name('news.create');
+Route::get('/knowledge-news/edit/{id}', [KnowledgeController::class, 'newsForm'])->middleware(['auth'])->name('news.edit');
+Route::post('/knowledge-news/save', [KnowledgeController::class, 'newsSave'])->middleware(['auth'])->name('news.save');
+Route::delete('/knowledge-news/delete/{id}', [KnowledgeController::class, 'newsDelete'])->middleware(['auth'])->name('news.delete');
+Route::get('/knowledge-news/detail/{id}', [KnowledgeController::class, 'newsDetail'])->middleware(['auth'])->name('news.detail');
+//community charity
+
+//knowledge news
+Route::get('/knowledge-news', [KnowledgeController::class, 'newsIndex'])->middleware(['auth'])->name('news');
+Route::post('/knowledge-news/save', [KnowledgeController::class, 'newsSave'])->middleware(['auth'])->name('news.save');
+//knowledge news
+
+//knowledge thought
+Route::get('/knowledge-thought', [KnowledgeController::class, 'thoughtIndex'])->middleware(['auth'])->name('thought');
+Route::post('/knowledge-thought/save', [KnowledgeController::class, 'thoughtSave'])->middleware(['auth'])->name('thought.save');
+//knowledge thought
+
+//knowledge salary
+Route::get('/knowledge-salary', [KnowledgeController::class, 'knowledgeSalary'])->middleware(['auth'])->name('knowledge.salary');
+Route::post('/knowledge-salary/save', [KnowledgeController::class, 'knowledgeSalarySave'])->middleware(['auth'])->name('knowledge.salary.save');
+//knowledge salary
 
 
 
