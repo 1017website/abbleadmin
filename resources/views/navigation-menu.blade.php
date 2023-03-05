@@ -91,6 +91,8 @@
                 </li>
 
                 <li class="sidebar-item"><a class="sidebar-link" href="/contact" aria-expanded="false"><i class="mdi mdi-contacts"></i><span class="hide-menu">{{ __('Contact') }}</span></a></li>
+
+                <li class="sidebar-item"><a class="sidebar-link" href="/setting" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">{{ __('Setting') }}</span></a></li>
             </ul>
         </nav>
     </div>

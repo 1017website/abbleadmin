@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\JoinController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\File;
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
@@ -158,4 +159,9 @@ Route::post('/join/save', [JoinController::class, 'save'])->middleware(['auth'])
 Route::delete('/join/delete/{id}', [JoinController::class, 'delete'])->middleware(['auth'])->name('join.delete');
 Route::get('/join/detail/{id}', [JoinController::class, 'detail'])->middleware(['auth'])->name('join.detail');
 //join
+
+//setting
+Route::get('/setting', [SettingController::class, 'index'])->middleware(['auth'])->name('setting');
+Route::post('/setting/save', [SettingController::class, 'save'])->middleware(['auth'])->name('setting.save');
+//setting
 
