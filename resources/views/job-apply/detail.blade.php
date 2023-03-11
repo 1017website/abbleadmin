@@ -6,7 +6,8 @@
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('job') }}">{{ __('Job') }}</a></li>
+                            <li class="breadcrumb-item">{{ __('Jobs') }}</li>
+                            <li class="breadcrumb-item"><a href="{{ route('job.apply') }}">{{ __('Jobs Apply') }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ __('Detail') }}</li>
                         </ol>
                     </nav>
@@ -18,13 +19,12 @@
     <div class="container-fluid">
 
         <div class="div-top">
-            <a class="btn btn-default" href="{{ route('job') }}">{{ __('Back') }}</a>
+            <a class="btn btn-default" href="{{ route('job.apply') }}">{{ __('Back') }}</a>
         </div>
 
         <div class="card bg-white shadow default-border-radius">
             <div class="card-body">
                 <h5 class="card-title">{{ __('Detail') }}</h5>
-                <div class="border-top"></div>
 
                 <div class="border-top"></div>
                 <div class="row p-3">
@@ -32,7 +32,7 @@
                         <strong>{{ __('Place') }}</strong>
                     </div>
                     <div class="col-sm-10">
-                        {{ $model->place }}
+                        {{ $model->job->place }}
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                         <strong>{{ __('Company') }}</strong>
                     </div>
                     <div class="col-sm-10">
-                        {{ $model->position }}
+                        {{ $model->job->position }}
                     </div>
                 </div>
 
@@ -52,37 +52,59 @@
                         <strong>{{ __('Role') }}</strong>
                     </div>
                     <div class="col-sm-10">
-                        {{ $model->role }}
+                        {{ $model->job->role }}
                     </div>
                 </div>
 
                 <div class="border-top"></div>
                 <div class="row p-3">
                     <div class="col-sm-2">
-                        <strong>{{ __('Description') }}</strong>
+                        <strong>{{ __('First Name') }}</strong>
                     </div>
                     <div class="col-sm-10">
-                        {!! $model->description !!}
+                        {{ $model->first_name }}
                     </div>
                 </div>
 
                 <div class="border-top"></div>
                 <div class="row p-3">
                     <div class="col-sm-2">
-                        <strong>{{ __('Created By') }}</strong>
+                        <strong>{{ __('Last Name') }}</strong>
                     </div>
                     <div class="col-sm-10">
-                        {{ isset($model->userCreated) ? $model->userCreated->name : '-' }}
+                        {{ $model->last_name }}
                     </div>
                 </div>
 
                 <div class="border-top"></div>
                 <div class="row p-3">
                     <div class="col-sm-2">
-                        <strong>{{ __('Updated By') }}</strong>
+                        <strong>{{ __('Email') }}</strong>
                     </div>
                     <div class="col-sm-10">
-                        {{ isset($model->userUpdated) ? $model->userUpdated->name : '-' }}
+                        {{ $model->email }}
+                    </div>
+                </div>
+
+                <div class="border-top"></div>
+                <div class="row p-3">
+                    <div class="col-sm-2">
+                        <strong>{{ __('Phone') }}</strong>
+                    </div>
+                    <div class="col-sm-10">
+                        {{ $model->phone_code .'-'.$model->phone }}
+                    </div>
+                </div>
+
+                <div class="border-top"></div>
+                <div class="row p-3">
+                    <div class="col-sm-2">
+                        <strong>{{ __('Cv') }}</strong>
+                    </div>
+                    <div class="col-sm-10">
+                        <?php if (!empty($model->cv)) { ?>
+                            <a target="_blank" style="color:#2962FF;white-space: nowrap;" href="{{ $urlFrontend.$model->cv }}"><i class="fas fa-search"></i> Download</a>
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -95,17 +117,6 @@
                         {{ $model->created_at }}
                     </div>
                 </div>
-
-                <div class="border-top"></div>
-                <div class="row p-3">
-                    <div class="col-sm-2">
-                        <strong>{{ __('Updated At') }}</strong>
-                    </div>
-                    <div class="col-sm-10">
-                        {{ $model->updated_at }}
-                    </div>
-                </div>
-
 
             </div>
         </div>

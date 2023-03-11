@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="position" class="col-sm-2 text-left control-label col-form-label">{{ __('Position') }}</label>
+                        <label for="position" class="col-sm-2 text-left control-label col-form-label">{{ __('Company') }}</label>
                         <div class="col-sm-10">
                             <input class="form-control" placeholder="Position" type="text" id="position" name="position" value="{{old('position', (isset($model->position) ? $model->position : ''))}}"  required="true">
                         </div>

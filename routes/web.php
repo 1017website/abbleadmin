@@ -11,6 +11,7 @@ use App\Http\Controllers\KnowledgeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\JobApplyController;
 use App\Http\Controllers\JoinController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\File;
@@ -147,6 +148,11 @@ Route::post('/job/save', [JobController::class, 'save'])->middleware(['auth'])->
 Route::delete('/job/delete/{id}', [JobController::class, 'delete'])->middleware(['auth'])->name('job.delete');
 Route::get('/job/detail/{id}', [JobController::class, 'detail'])->middleware(['auth'])->name('job.detail');
 //job
+
+//job apply
+Route::get('/job-apply', [JobApplyController::class, 'index'])->middleware(['auth'])->name('job.apply');
+Route::get('/job-apply/detail/{id}', [JobApplyController::class, 'detail'])->middleware(['auth'])->name('job.apply.detail');
+//job apply
 
 //join
 Route::get('/join-description', [JoinController::class, 'description'])->middleware(['auth'])->name('join.description');

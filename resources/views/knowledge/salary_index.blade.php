@@ -53,7 +53,7 @@
                                 <td>{{ $row->last_name }}</td>
                                 <td>{{ $row->email }}</td>
                                 <td>{{ $row->phone }}</td>
-                                <td>{{ $row->specialiaztion }}</td>
+                                <td>{{ $row->specialization }}</td>
                                 <td>{{ $row->currently_hiring }}</td>
                                 <td>{{ $row->created_at }}</td>
                             </tr>

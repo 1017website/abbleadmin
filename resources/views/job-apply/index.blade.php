@@ -6,7 +6,8 @@
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">{{ __('Jobs') }}</li>
+                            <li class="breadcrumb-item">{{ __('Jobs') }}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('Jobs Apply') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -15,10 +16,6 @@
     </div>
 
     <div class="container-fluid">
-
-        <div class="div-top">
-            <a class="btn btn-default" href="{{ route('job.create') }}">{{ __('Create') }}</a>
-        </div>
 
         <div class="card bg-white shadow default-border-radius">
             <div class="card-body">
@@ -40,8 +37,8 @@
                                 <th>{{ __('No') }}</th>
                                 <th>{{ __('Place') }}</th>
                                 <th>{{ __('Company') }}</th>
-                                <th>{{ __('Role') }}</th>
-                                <th>{{ __('Created By') }}</th>
+                                <th>{{ __('Name') }}</th>
+                                <th>{{ __('Email') }}</th>
                                 <th>{{ __('Created At') }}</th>
                                 <th>{{ __('Action') }}</th>
                             </tr>
@@ -51,19 +48,13 @@
                             @foreach ($model as $row)
                             <tr>
                                 <td align="center">{{ $no++; }}</td>
-                                <td>{{ $row->place }}</td>
-                                <td>{{ $row->position }}</td>
-                                <td>{{ $row->role }}</td>
-                                <td>{{ isset($row->userCreated) ? $row->userCreated->name : '-' }}</td>
+                                <td>{{ isset($row->job) ? $row->job->place : '-' }}</td>
+                                <td>{{ isset($row->job) ? $row->job->position : '-' }}</td>
+                                <td>{{ $row->first_name . ' '. $row->last_name }}</td>
+                                <td>{{ $row->email }}</td>
                                 <td>{{ $row->created_at }}</td>
                                 <td class="action-button">
-                                    <form action="{{ route('job.delete',$row->id) }}" method="POST">
-                                        <a class="btn btn-info" href="{{ route('job.detail',$row->id) }}"><i class="fas fa-eye"></i></a>
-                                        <a class="btn btn-default" href="{{ route('job.edit',$row->id) }}"><i class="fas fa-pencil-alt"></i></a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                    </form>
+                                    <a class="btn btn-info" href="{{ route('job.apply.detail',$row->id) }}"><i class="fas fa-eye"></i></a>
                                 </td>
                             </tr>
                             @endforeach
