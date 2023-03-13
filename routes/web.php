@@ -112,7 +112,9 @@ Route::post('/knowledge-thought/save', [KnowledgeController::class, 'thoughtSave
 
 //knowledge salary
 Route::get('/knowledge-salary', [KnowledgeController::class, 'knowledgeSalary'])->middleware(['auth'])->name('knowledge.salary');
-Route::post('/knowledge-salary/save', [KnowledgeController::class, 'knowledgeSalarySave'])->middleware(['auth'])->name('knowledge.salary.save');
+//knowledge salary description
+Route::get('/knowledge-salary-description', [KnowledgeController::class, 'knowledgeSalaryDescription'])->middleware(['auth'])->name('knowledge.salary.description');
+Route::post('/knowledge-salary-description/save', [KnowledgeController::class, 'knowledgeSalaryDescriptionSave'])->middleware(['auth'])->name('knowledge.salary.description.save');
 //knowledge salary
 
 //contact
