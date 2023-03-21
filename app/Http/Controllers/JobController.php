@@ -53,6 +53,7 @@ class JobController extends Controller {
         if ($success) {
             try {
                 $model = Job::firstOrNew(['id' => $id]);
+                $model->type = isset($request['type']) ? $request['type'] : NULL;
                 $model->place = isset($request['place']) ? $request['place'] : NULL;
                 $model->position = isset($request['position']) ? $request['position'] : NULL;
                 $model->role = isset($request['role']) ? $request['role'] : NULL;

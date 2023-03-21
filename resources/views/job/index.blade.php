@@ -38,6 +38,7 @@
                         <thead>
                             <tr>
                                 <th>{{ __('No') }}</th>
+                                <th>{{ __('Type') }}</th>
                                 <th>{{ __('Place') }}</th>
                                 <th>{{ __('Company') }}</th>
                                 <th>{{ __('Role') }}</th>
@@ -51,6 +52,7 @@
                             @foreach ($model as $row)
                             <tr>
                                 <td align="center">{{ $no++; }}</td>
+                                <td>{{ ucwords($row->type) }}</td>
                                 <td>{{ $row->place }}</td>
                                 <td>{{ $row->position }}</td>
                                 <td>{{ $row->role }}</td>

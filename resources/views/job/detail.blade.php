@@ -26,6 +26,15 @@
                 <h5 class="card-title">{{ __('Detail') }}</h5>
                 <div class="border-top"></div>
 
+                <div class="row p-3">
+                    <div class="col-sm-2">
+                        <strong>{{ __('Type') }}</strong>
+                    </div>
+                    <div class="col-sm-10">
+                        {{ ucwords($model->type) }}
+                    </div>
+                </div>
+
                 <div class="border-top"></div>
                 <div class="row p-3">
                     <div class="col-sm-2">

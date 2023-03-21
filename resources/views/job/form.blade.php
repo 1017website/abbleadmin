@@ -43,6 +43,16 @@
                     <input type="text" class="hidden" id="id" name="id" value="{{(isset($model->id) ? $model->id : '')}}">
 
                     <div class="form-group row">
+                        <label for="type" class="col-sm-2 text-left control-label col-form-label">{{ __('Type') }}</label>
+                        <div class="col-sm-10">
+                            <select class="select2 form-control custom-select" id="type" name="type" style="width: 100%;">
+                                <option value="jobs">Jobs</option>
+                                <option value="join abblesearch">Join Abblesearch</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label for="place" class="col-sm-2 text-left control-label col-form-label">{{ __('Place') }}</label>
                         <div class="col-sm-10">
                             <input class="form-control" placeholder="Place" type="text" id="place" name="place" value="{{old('place', (isset($model->place) ? $model->place : ''))}}"  required="true">
@@ -52,7 +62,7 @@
                     <div class="form-group row">
                         <label for="position" class="col-sm-2 text-left control-label col-form-label">{{ __('Company') }}</label>
                         <div class="col-sm-10">
-                            <input class="form-control" placeholder="Position" type="text" id="position" name="position" value="{{old('position', (isset($model->position) ? $model->position : ''))}}"  required="true">
+                            <input class="form-control" placeholder="Company" type="text" id="position" name="position" value="{{old('position', (isset($model->position) ? $model->position : ''))}}"  required="true">
                         </div>
                     </div>
 

@@ -15,7 +15,7 @@ class Job extends Model {
 
     protected $table = 'job';
     protected $fillable = [
-        'place', 'position', 'role', 'description'
+        'place', 'position', 'role', 'description', 'type'
     ];
 
     public function userCreated() {
