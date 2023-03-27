@@ -209,7 +209,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="salarysurveys" class="col-sm-2 text-left control-label col-form-label">{{ __('Salary Surveys') }}</label>
+                        <label for="salarysurveys" class="col-sm-2 text-left control-label col-form-label">{{ __('Knowledge') }}</label>
                         <div class="col-sm-10">
                             @if(!empty($model->salarysurveys))
                             <a style="color:#2962FF;white-space: nowrap;" href="{{ asset($model->salarysurveys) }}" target="_blank"><i class="fas fa-search"></i> Show Image</a>
