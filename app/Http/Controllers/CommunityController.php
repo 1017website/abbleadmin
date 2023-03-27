@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CommunityDescription;
 use App\Models\CommunityDiversity;
 use App\Models\CommunityPartnership;
 use App\Models\CommunityVolunteering;
@@ -11,6 +12,36 @@ use Illuminate\Support\Facades\DB;
 use File;
 
 class CommunityController extends Controller {
+
+    public function community() {
+
+        $model = DB::table('community_description')->first();
+        return view('community.description', [
+            'data' => $model,
+        ]);
+    }
+
+    public function communitySave(Request $request) {
+        $success = true;
+        $message = 'Update description success';
+        $id = isset($request['id']) ? $request['id'] : NULL;
+        if ($success) {
+            try {
+                $community = CommunityDescription::firstOrNew(['id' => $id]);
+                $community->description = $request['description'];
+                $community->save();
+            } catch (Exception $ex) {
+                $success = false;
+                $message = $ex->getMessage();
+            }
+        }
+
+        if (!$success) {
+            return redirect('/community')->with('success', $message);
+        } else {
+            return redirect('/community')->with('error', $message);
+        }
+    }
 
     public function charityIndex() {
         $model = CommunityPartnership::all();

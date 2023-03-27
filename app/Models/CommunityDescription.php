@@ -7,16 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Wildside\Userstamps\Userstamps;
 
-class Banner extends Model {
+class CommunityDescription extends Model {
 
     use HasFactory,
         SoftDeletes,
         Userstamps;
 
-    protected $table = 'banner';
+    protected $table = 'community_description';
     protected $fillable = [
-        'about', 'people', 'specializations', 'services', 'community', 'partnership',
-        'volunteering', 'diversityandinclusion', 'job', 'joinabblesearch', 'salarysurveys', 'contact'
+        'description',
     ];
 
     public function userCreated() {

@@ -69,6 +69,10 @@ Route::post('/service/save', [ServiceController::class, 'save'])->middleware(['a
 Route::delete('/service/delete/{id}', [ServiceController::class, 'delete'])->middleware(['auth'])->name('service.delete');
 Route::get('/service/detail/{id}', [ServiceController::class, 'detail'])->middleware(['auth'])->name('service.detail');
 //service
+//community description
+Route::get('/community', [CommunityController::class, 'community'])->middleware(['auth'])->name('community.description');
+Route::post('/community/save', [CommunityController::class, 'communitySave'])->middleware(['auth'])->name('community.description.save');
+//community description
 //community charity
 Route::get('/community-charity', [CommunityController::class, 'charityIndex'])->middleware(['auth'])->name('charity');
 Route::get('/community-charity/add', [CommunityController::class, 'charityForm'])->middleware(['auth'])->name('charity.create');
